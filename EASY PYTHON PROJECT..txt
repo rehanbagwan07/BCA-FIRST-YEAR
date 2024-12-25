@@ -1,0 +1,84 @@
+ --------------SMALL PROJECTS USING PYTHON------
+
+1] ROCK-PAPER PROJECT
+
+import random
+def play_game():
+    user_choice = input("Enter your choice (rock, paper, scissors): ").lower()
+    computer_choice = random.choice(["rock", "paper", "scissors"])
+
+    print(f"You chose {user_choice}.")
+    print(f"Computer chose {computer_choice}.")
+
+    if user_choice == computer_choice:
+        print("It's a tie!")
+    elif user_choice == "rock":
+        if computer_choice == "scissors":
+            print("You win!")
+        else:
+            print("Computer wins!")
+    elif user_choice == "paper":
+        if computer_choice == "rock":
+            print("You win!")
+        else:
+            print("Computer wins!")
+    elif user_choice == "scissors":
+        if computer_choice == "paper":
+            print("You win!")
+        else:
+            print("Computer wins!")
+
+play_game()
+           
+2] QUIZ GAME:-
+
+def quiz_game():
+    questions = [
+        ("What is the capital of France?", "Paris"),
+        ("What is the largest country in the world by land area?", "Russia"),
+        ("What is the tallest mountain in the world?", "Mount Everest")
+    ]
+    score = 0
+    for question, answer in questions:
+        user_answer = input(question + " ")
+        if user_answer.lower() == answer.lower():
+            print("Correct!")
+            score += 1
+        else:
+            print("Incorrect. The answer is:", answer)
+    print("Your final score is:", score)
+quiz_game()
+  
+3] ADVENTURE GAME:-
+
+def adventure_game():
+    print("Welcome to the Adventure Game!")
+    print("You are in a dark forest.")
+    choice = input("Do you want to go left or right? (left/right): ")
+    if choice == "left":
+        print("You found a treasure chest!")
+    elif choice == "right":
+        print("You encountered a dragon!")
+    else:
+        print("Invalid choice. You're lost.")
+adventure_game()
+
+4] PASSWORD GENERATER:-
+
+import random
+import string
+
+def generate_password(length):
+    letters = string.ascii_letters
+    digits = string.digits
+    symbols = string.punctuation
+
+    characters = letters + digits + symbols
+    password = ''.join(random.choice(characters) for i in range(length))
+    return password
+
+password_length = int(input("Enter desired password length: "))
+password = generate_password(password_length)
+print("Generated password:", password)
+ 
+               
